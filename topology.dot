@@ -1,8 +1,8 @@
 graph vx {
- "leaf01" [function="leaf" os="CumulusCommunity/cumulus-vx"]
- "leaf02" [function="leaf" os="CumulusCommunity/cumulus-vx"]
- "server01" [function="host" os="CumulusCommunity/boot_camp_server"]
- "server02" [function="host" os="CumulusCommunity/boot_camp_server"]
+ "leaf01" [function="leaf" os="CumulusCommunity/cumulus-vx" ]
+ "leaf02" [function="leaf" os="CumulusCommunity/cumulus-vx" ]
+ "server01" [function="host" os="yk0/ubuntu-xenial" memory="512" ]
+ "server02" [function="host" os="yk0/ubuntu-xenial" memory="512" ]
  "leaf01":"swp51" -- "leaf02":"swp51"
  "leaf01":"swp52" -- "leaf02":"swp52"
  "server01":"eth1" -- "leaf01":"swp1" [left_mac="00:03:00:11:11:01"]
