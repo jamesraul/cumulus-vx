@@ -1,0 +1,12 @@
+graph vx {
+ "leaf01" [function="leaf" os="CumulusCommunity/cumulus-vx"]
+ "leaf02" [function="leaf" os="CumulusCommunity/cumulus-vx"]
+ "server01" [function="host" os="CumulusCommunity/boot_camp_server"]
+ "server02" [function="host" os="CumulusCommunity/boot_camp_server"]
+ "leaf01":"swp51" -- "leaf02":"swp51"
+ "leaf01":"swp52" -- "leaf02":"swp52"
+ "server01":"eth1" -- "leaf01":"swp1" [left_mac="00:03:00:11:11:01"]
+ "server01":"eth2" -- "leaf02":"swp1" [left_mac="00:03:00:11:11:02"]
+ "server02":"eth1" -- "leaf01":"swp2" [left_mac="00:03:00:22:22:01"]
+ "server02":"eth2" -- "leaf02":"swp2" [left_mac="00:03:00:22:22:02"]
+}
