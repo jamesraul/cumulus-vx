@@ -4,6 +4,7 @@
     net add interface swp1 bridge access 11
     net add interface swp51
     net add interface swp52
+    net add bgp autonomous-system 65001
     net add bgp neighbor swp51 interface remote-as external
     net add bgp neighbor swp52 interface remote-as external
     net add bgp network 192.168.1.0/24
@@ -16,6 +17,7 @@
     net add interface swp1 bridge access 12
     net add interface swp51
     net add interface swp52
+    net add bgp autonomous-system 65002
     net add bgp neighbor swp51 interface remote-as external
     net add bgp neighbor swp52 interface remote-as external
     net add bgp network 192.168.2.0/24
