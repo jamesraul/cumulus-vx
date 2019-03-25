@@ -25,9 +25,15 @@
     net commit
 
 # server01
-    # /etc/network/interfaces
-    cat >/etc/network/interfaces
+    sudo su -
+    echo "auto lo
     iface lo inet loopback
+    
+    auto eth0
+    iface eth0 inet dhcp
+    
+    auto vagrant
+    iface vagrant inet dhcp
     
     auto eth1
     iface eth1 inet static
@@ -35,15 +41,21 @@
         network 192.168.1.0
         netmask 255.255.255.0
         broadcast 192.168.1.255
-        gateway 192.168.1.1
-    
-    source /etc/network/interfaces.d/*.cfg
+        up route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1
+    "  > /etc/network/interfaces
+    systemctl restart networking
+
 
 # server02
-    # /etc/network/interfaces
-    cat >/etc/network/interfaces
-    auto lo
+    sudo su -
+    echo "auto lo
     iface lo inet loopback
+    
+    auto eth0
+    iface eth0 inet dhcp
+    
+    auto vagrant
+    iface vagrant inet dhcp
     
     auto eth1
     iface eth1 inet static
@@ -51,7 +63,7 @@
         network 192.168.2.0
         netmask 255.255.255.0
         broadcast 192.168.2.255
-        gateway 192.168.2.1
-    
-    source /etc/network/interfaces.d/*.cfg
+        up route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.2.1
+    "  > /etc/network/interfaces
+    systemctl restart networking
 
