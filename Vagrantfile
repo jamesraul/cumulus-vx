@@ -79,7 +79,7 @@ SCRIPT
 
 Vagrant.configure("2") do |config|
 
-  simid = 1553283721
+  simid = 1553614313
 
   config.vm.provider "virtualbox" do |v|
     v.gui=false
@@ -95,6 +95,7 @@ Vagrant.configure("2") do |config|
     device.vm.hostname = "leaf02" 
     
     device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box_version = "3.6.2"
     device.vm.provider "virtualbox" do |v|
       v.name = "#{simid}_leaf02"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
@@ -188,6 +189,7 @@ end
     device.vm.hostname = "leaf01" 
     
     device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box_version = "3.6.2"
     device.vm.provider "virtualbox" do |v|
       v.name = "#{simid}_leaf01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']

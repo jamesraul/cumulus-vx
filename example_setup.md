@@ -8,6 +8,7 @@
     net add bgp neighbor swp51 interface remote-as external
     net add bgp neighbor swp52 interface remote-as external
     net add bgp network 192.168.1.0/24
+    net add bgp ipv4 unicast maximum-paths 4
     net pending
     net commit
 
@@ -21,6 +22,7 @@
     net add bgp neighbor swp51 interface remote-as external
     net add bgp neighbor swp52 interface remote-as external
     net add bgp network 192.168.2.0/24
+    net add bgp ipv4 unicast maximum-paths 4
     net pending
     net commit
 
